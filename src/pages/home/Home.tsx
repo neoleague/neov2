@@ -54,7 +54,12 @@ const Home: React.FC = () => {
                     <button
                       className="relative group cursor-pointer"
                       onClick={() => {
-                        navigate("/login");
+                        // Open external Google Form in a new tab instead of navigating to /login
+                        window.open(
+                          "https://docs.google.com/forms/d/e/1FAIpQLSfLrKikS5WNOfr71obqevBct0RDAe1Jcl4Je_-pldauetQRdg/viewform?usp=dialog",
+                          "_blank",
+                          "noopener,noreferrer"
+                        );
                       }}
                     >
                       <div
@@ -62,7 +67,7 @@ const Home: React.FC = () => {
                                     overflow-hidden transition-all duration-300
                                     group-hover:bg-[#0b8065]"
                       >
-                        <span className="relative z-10">preview</span>
+                        <span className="relative z-10">Apply</span>
                         <div
                           className="absolute inset-0 bg-linear-to-r from-[#34D399] to-[#6ee7b7]
                                       opacity-0 group-hover:opacity-20 transition-opacity duration-300"
