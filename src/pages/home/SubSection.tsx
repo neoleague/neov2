@@ -13,7 +13,7 @@ import webimg2 from "@/src/assets/event/e5.jpg";
 
 export default function Component() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollY } = useScroll();  // Removed target and offset to track global scroll
+  const { scrollY } = useScroll(); // Removed target and offset to track global scroll
 
   // const scrollVelocity = useVelocity(scrollY);
   // const smoothVelocity = useSpring(scrollVelocity, {
@@ -31,8 +31,8 @@ export default function Component() {
   // );
 
   // Adjusted transform values for more noticeable movement
-  const x1 = useTransform(scrollY, [0, 1000], [-600, 0]);  // Linear movement based on scroll
-  const x2 = useTransform(scrollY, [0, 1000], [600, 0]);   // Linear movement based on scroll
+  const x1 = useTransform(scrollY, [0, 1000], [-600, 0]); // Linear movement based on scroll
+  const x2 = useTransform(scrollY, [0, 1000], [600, 0]); // Linear movement based on scroll
   const rotate1 = useTransform(scrollY, [0, 1000], [25, 0]); // Rotation based on scroll
   const rotate2 = useTransform(scrollY, [0, 1000], [-25, 0]); // Rotation based on scroll
 
@@ -60,15 +60,25 @@ export default function Component() {
       <div className="container mx-auto px-4 mb-32">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-5xl md:text-7xl font-bold text-[#065f46] mb-8 leading-tight">
-            turn your <br />
+            Turn your <br />
             <span className="text-transparent bg-clip-text bg-linear-to-r from-[#065f46] to-[#34D399]">
               passion to life.
             </span>
           </h2>
 
+          <div className="mb-8 mt-4">
+            <div className="relative inline-block">
+              <p className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-[#34D399] via-[#10B981] to-[#34D399] bg-size-200 animate-gradient-x tracking-tight">
+                5k+ in prizes
+              </p>
+              <span className="absolute -inset-2 bg-linear-to-r from-[#34D399]/20 via-[#10B981]/20 to-[#34D399]/20 rounded-2xl blur-xl -z-10 animate-pulse"></span>
+              <span className="absolute -inset-1 border-2 border-[#34D399]/30 rounded-xl blur-sm"></span>
+            </div>
+          </div>
+
           <p className="text-[#065f46]/70 text-lg max-w-2xl mx-auto">
-            this is where you will take any idea you're excited about, figure
-            out how to bring it to life, and share it with the world. working
+            This is where you will take any idea you're excited about, figure
+            out how to bring it to life, and share it with the world. Working
             with your team of ten allows you to learn from each other, and build
             something that you're proud of.
           </p>
@@ -104,8 +114,10 @@ export default function Component() {
             />
           </motion.div>
           <div className="absolute z-75 font-bold text-[#065f46] text-center transform -translate-x-1/2 left-1/2 w-full max-w-[800px]">
-            <span className="text-transparent text-6xl bg-clip-text bg-linear-to-r from-[#065f46] via-[#34D399] to-[#065f46] 
-                        bg-size-200 animate-gradient-x tracking-tight hover:scale-105 transition-transform duration-300">
+            <span
+              className="text-transparent text-6xl bg-clip-text bg-linear-to-r from-[#065f46] via-[#34D399] to-[#065f46] 
+                        bg-size-200 animate-gradient-x tracking-tight hover:scale-105 transition-transform duration-300"
+            >
               wrdsb dev summit
             </span>
             <br />
@@ -139,27 +151,27 @@ export default function Component() {
       {/* Info Sections */}
       <div className="container mx-auto px-4 space-y-32">
         <div className="max-w-4xl mx-auto">
-          <div className="text-sm text-[#34D399] mb-4">remember!</div>
+          <div className="text-sm text-[#34D399] mb-4">Remember!</div>
           <h3 className="text-4xl md:text-6xl font-bold text-[#065f46] mb-6">
-            not just a hackathon.
+            Not just a hackathon.
           </h3>
           <p className="text-[#065f46]/70 text-lg">
-            we're a community of developers
-            who are passionate about building things that matter. we're not
-            a hackathon, we're a movement with new systems and implementations
-            that will change the future of building forever.
+            We're a community of developers who are passionate about building
+            things that matter. We're not a hackathon, we're a movement with new
+            systems and implementations that will change the future of building
+            forever.
           </p>
         </div>
 
         <div className="max-w-4xl mx-auto">
           <div className="text-sm text-[#34D399] mb-4">cha-ching!</div>
           <h3 className="text-4xl md:text-6xl font-bold text-[#065f46] mb-6">
-            no money? np.
+            No money? Np.
           </h3>
           <p className="text-[#065f46]/70 text-lg">
-            we have a new funding model that allows participants to focus on building
-            without worrying about the financial side of things during the
-            event. all you need is a laptop and a passion for innovation.
+            We have a new funding model that allows participants to focus on
+            building without worrying about the financial side of things during
+            the event. All you need is a laptop and a passion for innovation.
           </p>
         </div>
       </div>

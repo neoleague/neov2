@@ -40,7 +40,7 @@ const Home: React.FC = () => {
               <div className="flex-1 px-4 sm:px-6 md:pl-16 flex items-center justify-center">
                 <div className="max-w-2xl">
                   <h1 className="font-manrope font-extrabold md:font-bold text-6xl sm:text-6xl md:text-7xl lg:text-7xl text-[#065f46] leading-tight mb-4 md:mb-8 text-center md:text-left">
-                    inspiring the next <br className="hidden md:block" />
+                    Inspiring the next <br className="hidden md:block" />
                     <span className="pt-3 relative inline-block">
                       <span className="text-transparent bg-clip-text bg-linear-to-r from-[#065f46] via-[#34D399] to-[#065f46] bg-size-200 animate-gradient-x">
                         generation of engineers.
@@ -50,7 +50,7 @@ const Home: React.FC = () => {
                   </h1>
 
                   {/* Apply Now Button */}
-                  <div className="mt-12 flex justify-center md:justify-start">
+                  <div className="mt-14 flex justify-center md:justify-start">
                     <button
                       className="relative group cursor-pointer"
                       onClick={() => {
@@ -63,11 +63,13 @@ const Home: React.FC = () => {
                       }}
                     >
                       <div
-                        className="relative px-8 py-3 bg-[#065f46] text-white rounded-sm font-semibold
+                        className="relative px-12 py-4 bg-[#065f46] text-white rounded-md font-semibold text-lg
                                     overflow-hidden transition-all duration-300
                                     group-hover:bg-[#0b8065]"
                       >
-                        <span className="relative z-10">Apply</span>
+                        <span className="relative z-10 text-lg md:text-xl font-bold">
+                          Apply Now
+                        </span>
                         <div
                           className="absolute inset-0 bg-linear-to-r from-[#34D399] to-[#6ee7b7]
                                       opacity-0 group-hover:opacity-20 transition-opacity duration-300"
