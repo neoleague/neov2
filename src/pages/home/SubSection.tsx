@@ -66,7 +66,15 @@ export default function Component() {
             </span>
           </h2>
 
-          <div className="mb-8 mt-4">
+
+          <p className="text-[#065f46]/70 text-lg max-w-2xl mx-auto">
+            This is where you will take any idea you're excited about, figure
+            out how to bring it to life, and share it with the world. Working
+            with your team of ten allows you to learn from each other, and build
+            something that you're proud of.
+          </p>
+
+          <div className="mt-12 md:mt-16">
             <div className="relative inline-block">
               <p className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-[#34D399] via-[#10B981] to-[#34D399] bg-size-200 animate-gradient-x tracking-tight">
                 5k+ in prizes
@@ -75,13 +83,6 @@ export default function Component() {
               <span className="absolute -inset-1 border-2 border-[#34D399]/30 rounded-xl blur-sm"></span>
             </div>
           </div>
-
-          <p className="text-[#065f46]/70 text-lg max-w-2xl mx-auto">
-            This is where you will take any idea you're excited about, figure
-            out how to bring it to life, and share it with the world. Working
-            with your team of ten allows you to learn from each other, and build
-            something that you're proud of.
-          </p>
         </div>
       </div>
 
