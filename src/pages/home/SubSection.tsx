@@ -66,7 +66,6 @@ export default function Component() {
             </span>
           </h2>
 
-
           <p className="text-[#065f46]/70 text-lg max-w-2xl mx-auto">
             This is where you will take any idea you're excited about, figure
             out how to bring it to life, and share it with the world. Working
@@ -165,14 +164,32 @@ export default function Component() {
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <div className="text-sm text-[#34D399] mb-4">cha-ching!</div>
+          <div className="flex items-center justify-between mb-4">
+            <div className="text-sm text-[#34D399]">Experience</div>
+            <div className="inline-flex items-center gap-3 bg-white/90 backdrop-blur-sm border border-[#34D399]/10 rounded-lg px-3 py-2 text-sm text-[#065f46]">
+              <svg
+                className="w-5 h-5 text-[#34D399]"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                aria-hidden="true"
+              >
+                <path d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zM4 8h12v6H4V8z" />
+              </svg>
+              <span className="font-semibold">November 22–23, 2025</span>
+            </div>
+          </div>
           <h3 className="text-4xl md:text-6xl font-bold text-[#065f46] mb-6">
-            No money? Np.
+            What to Expect
           </h3>
           <p className="text-[#065f46]/70 text-lg">
-            We have a new funding model that allows participants to focus on
-            building without worrying about the financial side of things during
-            the event. All you need is a laptop and a passion for innovation.
+            The event brings together student teams of 6–10 members who will
+            collaborate to design, develop, and present original projects.
+            Throughout the day there will be short, skill-based mini-games and
+            challenges where teams can earn additional judging points. Teams
+            will be evaluated by a panel of judges based on creativity,
+            technical execution, user experience, and impact. The event will
+            conclude with final demonstrations where top projects are showcased
+            and awarded.
           </p>
         </div>
       </div>
