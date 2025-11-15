@@ -75,9 +75,10 @@ export default function Component() {
                 </span>
               </div>
               <div className="h-1 w-28 mx-auto my-3 bg-linear-to-r from-[#34D399] to-[#10B981] rounded-full opacity-80" />
-              <div className="text-sm md:text-base text-[#065f46]/75">
-                Nov 22 — 8:00 PM – 11:00 PM &nbsp;•&nbsp; Nov 23 — 8:00 AM –
-                5:00 PM
+              <div className="text-sm md:text-base text-[#065f46]/75 flex items-center gap-4 justify-center">
+                <span>Nov 22 — 8:00 AM – 11:00 PM</span>
+                <span className="text-zinc-400">•</span>
+                <span className="font-medium"> Nov 23 — Online</span>
               </div>
             </div>
           </div>
@@ -90,12 +91,36 @@ export default function Component() {
           </p>
 
           <div className="mt-12 md:mt-16">
-            <div className="relative inline-block">
-              <p className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-[#34D399] via-[#10B981] to-[#34D399] bg-size-200 animate-gradient-x tracking-tight">
-                5k+ in prizes
-              </p>
-              <span className="absolute -inset-2 bg-linear-to-r from-[#34D399]/20 via-[#10B981]/20 to-[#34D399]/20 rounded-2xl blur-xl -z-10 animate-pulse"></span>
-              <span className="absolute -inset-1 border-2 border-[#34D399]/30 rounded-xl blur-sm"></span>
+            <div className="relative">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 items-stretch justify-center max-w-4xl mx-auto">
+                <div className="flex flex-col items-center justify-center p-4 hover:scale-105 transition">
+                  <div className="text-sm font-medium uppercase text-zinc-400 tracking-wider">
+                    1st place
+                  </div>
+                  <div className="mt-2 text-4xl md:text-5xl font-extrabold text-[#065f46]">
+                    $1,000
+                  </div>
+                </div>
+
+                <div className="flex flex-col items-center justify-center p-4 hover:scale-105 transition">
+                  <div className="text-sm font-medium uppercase text-zinc-400 tracking-wider">
+                    2nd place
+                  </div>
+                  <div className="mt-2 text-3xl md:text-4xl font-extrabold text-[#065f46]">
+                    $300
+                  </div>
+                </div>
+
+                <div className="flex flex-col items-center justify-center p-4 hover:scale-105 transition">
+                  <div className="text-sm font-medium uppercase text-zinc-400 tracking-wider">
+                    3rd place
+                  </div>
+                  <div className="mt-2 text-3xl md:text-4xl font-extrabold text-[#065f46]">
+                    $200
+                  </div>
+                </div>
+              </div>
+              <span className="absolute -left-8 -bottom-6 block h-28 w-52 rounded-full opacity-12 blur-3xl bg-gradient-to-r from-[#065f46] to-[#10B981]" />
             </div>
           </div>
         </div>
