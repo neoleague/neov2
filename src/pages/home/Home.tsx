@@ -10,6 +10,10 @@ import s_nordpass from "@/src/assets/sponsor/nordpass vertical (1).png";
 import s_nordvpn from "@/src/assets/sponsor/NordVPN_Logo_RGB_Primary_Black (1).png";
 import s_saily from "@/src/assets/sponsor/saily-logo-black (3).png";
 import s_sobeys from "@/src/assets/sponsor/Sobeys_logo.svg.png";
+import wimpys from "@/src/assets/sponsor/Wimpys.png";
+import twice from "@/src/assets/sponsor/twicethedeal.jpg";
+import popeyes from "@/src/assets/sponsor/popeyes.jpg";
+import eddies from "@/src/assets/sponsor/fasteddies.jpg";
 
 const SponsorGallery: React.FC = () => {
   const images = [
@@ -21,12 +25,17 @@ const SponsorGallery: React.FC = () => {
     s_nordpass,
     s_nordvpn,
     s_saily,
+    wimpys,
+    twice,
+    popeyes,
+    eddies,
   ];
 
   // Layout: first row = 3 items, second row = 4 items
   const firstRow = images.slice(0, 3);
   // show exactly 4 items on second row (slice 3..7)
   const secondRow = images.slice(3, 7);
+  const thirdRow = images.slice(7, 12);
 
   return (
     <div className="flex flex-col gap-6 items-center">
@@ -57,6 +66,23 @@ const SponsorGallery: React.FC = () => {
               <img
                 src={src}
                 alt={`sponsor-${i + 3}`}
+                className="max-h-16 object-contain filter grayscale opacity-80 transition duration-300 group-hover:grayscale-0 group-hover:opacity-100"
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="grid grid-cols-5 gap-6 w-full max-w-4xl">
+        {thirdRow.map((src, i) => (
+          <div
+            key={`r3-${i}`}
+            className="group flex items-center justify-center p-3 rounded-lg transition-transform transform hover:-translate-y-1"
+          >
+            <div className="flex items-center justify-center w-full h-20 bg-transparent rounded-md">
+              <img
+                src={src}
+                alt={`sponsor-${i + 7}`}
                 className="max-h-16 object-contain filter grayscale opacity-80 transition duration-300 group-hover:grayscale-0 group-hover:opacity-100"
               />
             </div>
