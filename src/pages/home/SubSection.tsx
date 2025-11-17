@@ -126,69 +126,6 @@ export default function Component() {
         </div>
       </div>
 
-      {/* Floating Images Section with Enhanced Animation */}
-      <motion.div
-        className="relative h-[70vh] mb-48"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        viewport={{ once: true }}
-      >
-        <motion.div
-          className="absolute inset-0 flex items-center justify-center"
-          style={{
-            perspective: 1000,
-          }}
-        >
-          <motion.div
-            style={{
-              x: x1,
-              rotateY: rotate1,
-              z: 100,
-            }}
-            className="absolute w-[500px] h-[300px] rounded-2xl overflow-hidden shadow-2xl"
-          >
-            <img
-              src={webimg1}
-              alt="Decorative"
-              className="w-full h-full object-cover"
-            />
-          </motion.div>
-          <div className="absolute z-75 font-bold text-[#065f46] text-center transform -translate-x-1/2 left-1/2 w-full max-w-[800px]">
-            <span
-              className="text-transparent text-6xl bg-clip-text bg-linear-to-r from-[#065f46] via-[#34D399] to-[#065f46] 
-                        bg-size-200 animate-gradient-x tracking-tight hover:scale-105 transition-transform duration-300"
-            >
-              wrdsb dev summit
-            </span>
-            <br />
-            <span className="text-4xl inline-block mt-4 font-extrabold tracking-widest bg-linear-to-r from-[#065f46] to-[#34D399] text-transparent bg-clip-text">
-              26.10.24
-            </span>
-            <br />
-            <div className="text-2xl mt-4 font-medium tracking-wide text-[#065f46]/80 animate-pulse flex flex-col xl:flex-row items-center justify-center gap-2">
-              <span>100 Participants • 10 Schools</span>
-              <span className="hidden xl:inline">•</span>
-              <i>100 Handmade Sandwiches</i>
-            </div>
-          </div>
-          <motion.div
-            style={{
-              x: x2,
-              rotateY: rotate2,
-              z: 50,
-            }}
-            className="absolute w-[500px] h-[300px] rounded-2xl overflow-hidden shadow-2xl"
-          >
-            <img
-              src={webimg2}
-              alt="Decorative"
-              className="w-full h-full object-cover"
-            />
-          </motion.div>
-        </motion.div>
-      </motion.div>
-
       {/* Info Sections */}
       <div className="container mx-auto px-4 space-y-32">
         <div className="max-w-4xl mx-auto">

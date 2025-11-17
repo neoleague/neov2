@@ -1,14 +1,74 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router";
 import logo from "@/src/assets/Neo-logo.png";
 import SubSection from "./SubSection.tsx";
+// Static sponsor imports (explicit so runtime doesn't depend on import.meta.globEager)
+import s_codecrafters from "@/src/assets/sponsor/CodeCrafters.io full logo full text (Dark text).png";
+import s_incogni from "@/src/assets/sponsor/Incogni_logo_black_better_quality.png";
+import s_logo3 from "@/src/assets/sponsor/Logo-3.jpg";
+import s_nexos from "@/src/assets/sponsor/nexos-ai-logo-MAIN-black-horizontal.png";
+import s_nordpass from "@/src/assets/sponsor/nordpass vertical (1).png";
+import s_nordvpn from "@/src/assets/sponsor/NordVPN_Logo_RGB_Primary_Black (1).png";
+import s_saily from "@/src/assets/sponsor/saily-logo-black (3).png";
+
+const SponsorGallery: React.FC = () => {
+  const images = [
+    s_codecrafters,
+    s_incogni,
+    s_logo3,
+    s_nexos,
+    s_nordpass,
+    s_nordvpn,
+    s_saily,
+  ];
+
+  // Layout: first row = 3 items, second row = 4 items
+  const firstRow = images.slice(0, 3);
+  const secondRow = images.slice(3);
+
+  return (
+    <div className="flex flex-col gap-6 items-center">
+      <div className="grid grid-cols-3 gap-6 w-full max-w-4xl">
+        {firstRow.map((src, i) => (
+          <div
+            key={`r1-${i}`}
+            className="group flex items-center justify-center p-3 rounded-lg transition-transform transform hover:-translate-y-1"
+          >
+            <div className="flex items-center justify-center w-full h-20 bg-white/5 rounded-md">
+              <img
+                src={src}
+                alt={`sponsor-${i}`}
+                className="max-h-16 object-contain filter grayscale opacity-80 transition duration-300 group-hover:grayscale-0 group-hover:opacity-100"
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="grid grid-cols-4 gap-6 w-full max-w-4xl">
+        {secondRow.map((src, i) => (
+          <div
+            key={`r2-${i}`}
+            className="group flex items-center justify-center p-3 rounded-lg transition-transform transform hover:-translate-y-1"
+          >
+            <div className="flex items-center justify-center w-full h-20 bg-white/5 rounded-md">
+              <img
+                src={src}
+                alt={`sponsor-${i + 3}`}
+                className="max-h-16 object-contain filter grayscale opacity-80 transition duration-300 group-hover:grayscale-0 group-hover:opacity-100"
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 import neobuild1 from "@/src/assets/n1.png";
 import neobuild2 from "@/src/assets/n2.png";
 import sponsorPDF from "@/src/assets/pdf/sponsor.pdf";
 
 const Home: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState(false);
-  let navigate = useNavigate();
 
   useEffect(() => {
     setTimeout(() => {
@@ -113,6 +173,7 @@ const Home: React.FC = () => {
               </div>
             </div>
           </section>
+
           {/* Welcome Section with Updated Media Flow */}
           <SubSection />
 
@@ -151,6 +212,17 @@ const Home: React.FC = () => {
             </div>
           </section>
 
+          {/* Sponsors Section (under map) */}
+          <section className="max-w-7xl mx-auto my-8 px-6">
+            <div className="bg-white/70 backdrop-blur-sm rounded-xl shadow-sm overflow-hidden border border-[#34D399]/8 p-6">
+              <h3 className="text-2xl md:text-3xl font-manrope font-extrabold tracking-wide text-[#065f46] mb-4 text-center">
+                Sponsors
+              </h3>
+              <div className="w-full">
+                <SponsorGallery />
+              </div>
+            </div>
+          </section>
           {/* Footer */}
           <footer className="relative px-8 md:px-16 py-12 backdrop-blur-xs border-t border-[#34D399]/10 overflow-hidden">
             {/* Background Images */}
