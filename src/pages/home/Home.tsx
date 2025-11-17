@@ -9,12 +9,14 @@ import s_nexos from "@/src/assets/sponsor/nexos-ai-logo-MAIN-black-horizontal.pn
 import s_nordpass from "@/src/assets/sponsor/nordpass vertical (1).png";
 import s_nordvpn from "@/src/assets/sponsor/NordVPN_Logo_RGB_Primary_Black (1).png";
 import s_saily from "@/src/assets/sponsor/saily-logo-black (3).png";
+import s_sobeys from "@/src/assets/sponsor/Sobeys_logo.svg.png";
 
 const SponsorGallery: React.FC = () => {
   const images = [
     s_codecrafters,
     s_incogni,
     s_logo3,
+    s_sobeys,
     s_nexos,
     s_nordpass,
     s_nordvpn,
@@ -23,7 +25,8 @@ const SponsorGallery: React.FC = () => {
 
   // Layout: first row = 3 items, second row = 4 items
   const firstRow = images.slice(0, 3);
-  const secondRow = images.slice(3);
+  // show exactly 4 items on second row (slice 3..7)
+  const secondRow = images.slice(3, 7);
 
   return (
     <div className="flex flex-col gap-6 items-center">
@@ -33,7 +36,7 @@ const SponsorGallery: React.FC = () => {
             key={`r1-${i}`}
             className="group flex items-center justify-center p-3 rounded-lg transition-transform transform hover:-translate-y-1"
           >
-            <div className="flex items-center justify-center w-full h-20 bg-white/5 rounded-md">
+            <div className="flex items-center justify-center w-full h-20 bg-transparent rounded-md">
               <img
                 src={src}
                 alt={`sponsor-${i}`}
@@ -50,7 +53,7 @@ const SponsorGallery: React.FC = () => {
             key={`r2-${i}`}
             className="group flex items-center justify-center p-3 rounded-lg transition-transform transform hover:-translate-y-1"
           >
-            <div className="flex items-center justify-center w-full h-20 bg-white/5 rounded-md">
+            <div className="flex items-center justify-center w-full h-20 bg-transparent rounded-md">
               <img
                 src={src}
                 alt={`sponsor-${i + 3}`}
