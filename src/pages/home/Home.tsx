@@ -31,6 +31,21 @@ const SponsorGallery: React.FC = () => {
     eddies,
   ];
 
+  // Map image source -> href and rel attributes for sponsor links
+  const linkMap: Record<string, string> = {
+    [s_nordvpn]: "https://nordvpn.com/hackathons",
+    [s_incogni]: "https://incogni.com/",
+    [s_nordpass]: "https://nordpass.com/",
+    [s_saily]: "https://saily.com/",
+    [s_nexos]: "https://nexos.ai/",
+    [s_logo3]: "https://nordprotect.com/",
+  };
+
+  const relMap: Record<string, string> = {
+    // NordVPN requested to be marked as nofollow/sponsored
+    [s_nordvpn]: "nofollow sponsored noopener noreferrer",
+  };
+
   // Layout: first row = 3 items, second row = 4 items
   const firstRow = images.slice(0, 3);
   // show exactly 4 items on second row (slice 3..7)
@@ -40,54 +55,111 @@ const SponsorGallery: React.FC = () => {
   return (
     <div className="flex flex-col gap-6 items-center">
       <div className="grid grid-cols-3 gap-6 w-full max-w-4xl">
-        {firstRow.map((src, i) => (
-          <div
-            key={`r1-${i}`}
-            className="group flex items-center justify-center p-3 rounded-lg transition-transform transform hover:-translate-y-1"
-          >
-            <div className="flex items-center justify-center w-full h-20 bg-transparent rounded-md">
-              <img
-                src={src}
-                alt={`sponsor-${i}`}
-                className="max-h-16 object-contain filter grayscale opacity-80 transition duration-300 group-hover:grayscale-0 group-hover:opacity-100"
-              />
+        {firstRow.map((src, i) => {
+          const href = linkMap[src as unknown as string];
+          const rel = relMap[src as unknown as string] || "noopener noreferrer";
+          return (
+            <div
+              key={`r1-${i}`}
+              className="group flex items-center justify-center p-3 rounded-lg transition-transform transform hover:-translate-y-1"
+            >
+              <div className="flex items-center justify-center w-full h-20 bg-transparent rounded-md">
+                {href ? (
+                  <a
+                    href={href}
+                    target="_blank"
+                    rel={rel}
+                    className="w-full flex items-center justify-center"
+                  >
+                    <img
+                      src={src}
+                      alt={`sponsor-${i}`}
+                      className="max-h-16 object-contain filter grayscale opacity-80 transition duration-300 group-hover:grayscale-0 group-hover:opacity-100"
+                    />
+                  </a>
+                ) : (
+                  <img
+                    src={src}
+                    alt={`sponsor-${i}`}
+                    className="max-h-16 object-contain filter grayscale opacity-80 transition duration-300 group-hover:grayscale-0 group-hover:opacity-100"
+                  />
+                )}
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       <div className="grid grid-cols-4 gap-6 w-full max-w-4xl">
-        {secondRow.map((src, i) => (
-          <div
-            key={`r2-${i}`}
-            className="group flex items-center justify-center p-3 rounded-lg transition-transform transform hover:-translate-y-1"
-          >
-            <div className="flex items-center justify-center w-full h-20 bg-transparent rounded-md">
-              <img
-                src={src}
-                alt={`sponsor-${i + 3}`}
-                className="max-h-16 object-contain filter grayscale opacity-80 transition duration-300 group-hover:grayscale-0 group-hover:opacity-100"
-              />
+        {secondRow.map((src, i) => {
+          const href = linkMap[src as unknown as string];
+          const rel = relMap[src as unknown as string] || "noopener noreferrer";
+          return (
+            <div
+              key={`r2-${i}`}
+              className="group flex items-center justify-center p-3 rounded-lg transition-transform transform hover:-translate-y-1"
+            >
+              <div className="flex items-center justify-center w-full h-20 bg-transparent rounded-md">
+                {href ? (
+                  <a
+                    href={href}
+                    target="_blank"
+                    rel={rel}
+                    className="w-full flex items-center justify-center"
+                  >
+                    <img
+                      src={src}
+                      alt={`sponsor-${i + 3}`}
+                      className="max-h-16 object-contain filter grayscale opacity-80 transition duration-300 group-hover:grayscale-0 group-hover:opacity-100"
+                    />
+                  </a>
+                ) : (
+                  <img
+                    src={src}
+                    alt={`sponsor-${i + 3}`}
+                    className="max-h-16 object-contain filter grayscale opacity-80 transition duration-300 group-hover:grayscale-0 group-hover:opacity-100"
+                  />
+                )}
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       <div className="grid grid-cols-5 gap-6 w-full max-w-4xl">
-        {thirdRow.map((src, i) => (
-          <div
-            key={`r3-${i}`}
-            className="group flex items-center justify-center p-3 rounded-lg transition-transform transform hover:-translate-y-1"
-          >
-            <div className="flex items-center justify-center w-full h-20 bg-transparent rounded-md">
-              <img
-                src={src}
-                alt={`sponsor-${i + 7}`}
-                className="max-h-16 object-contain filter grayscale opacity-80 transition duration-300 group-hover:grayscale-0 group-hover:opacity-100"
-              />
+        {thirdRow.map((src, i) => {
+          const href = linkMap[src as unknown as string];
+          const rel = relMap[src as unknown as string] || "noopener noreferrer";
+          return (
+            <div
+              key={`r3-${i}`}
+              className="group flex items-center justify-center p-3 rounded-lg transition-transform transform hover:-translate-y-1"
+            >
+              <div className="flex items-center justify-center w-full h-20 bg-transparent rounded-md">
+                {href ? (
+                  <a
+                    href={href}
+                    target="_blank"
+                    rel={rel}
+                    className="w-full flex items-center justify-center"
+                  >
+                    <img
+                      src={src}
+                      alt={`sponsor-${i + 7}`}
+                      className="max-h-16 object-contain filter grayscale opacity-80 transition duration-300 group-hover:grayscale-0 group-hover:opacity-100"
+                    />
+                  </a>
+                ) : (
+                  <img
+                    src={src}
+                    alt={`sponsor-${i + 7}`}
+                    className="max-h-16 object-contain filter grayscale opacity-80 transition duration-300 group-hover:grayscale-0 group-hover:opacity-100"
+                  />
+                )}
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );
