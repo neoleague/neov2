@@ -167,6 +167,17 @@ const SponsorGallery: React.FC = () => {
 import neobuild1 from "@/src/assets/n1.png";
 import neobuild2 from "@/src/assets/n2.png";
 import sponsorPDF from "@/src/assets/pdf/sponsor.pdf";
+// Import team member photos from head2 folder
+import ahmadPhoto from "@/src/assets/head2/Ahmad.jpg";
+import aidenPhoto from "@/src/assets/head2/Aiden.jpg";
+import allanPhoto from "@/src/assets/head2/allan.jpg";
+import asadPhoto from "@/src/assets/head2/asad.jpg";
+import erfanPhoto from "@/src/assets/head2/Erfan.jpg";
+import ethanPhoto from "@/src/assets/head2/Ethan.jpg";
+import evanPhoto from "@/src/assets/head2/Evan.jpg";
+import neevPhoto from "@/src/assets/head2/Neev.jpg";
+import timPhoto from "@/src/assets/head2/Tim Yu.png";
+import vjPhoto from "@/src/assets/head2/Vj.jpg";
 
 const Home: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -324,6 +335,46 @@ const Home: React.FC = () => {
               </div>
             </div>
           </section>
+
+          {/* Team Section */}
+          <section className="max-w-7xl mx-auto my-12 px-6">
+            <div className="p-6">
+              <h3 className="text-2xl md:text-3xl font-manrope font-extrabold tracking-wide text-[#065f46] mb-6 text-center">
+                Team
+              </h3>
+              <div className="flex flex-nowrap justify-center items-center gap-4 md:gap-5 overflow-x-auto">
+                {[
+                  { photo: evanPhoto, name: "Evan Zhou" },
+                  { photo: allanPhoto, name: "Allan Wang" },
+                  { photo: aidenPhoto, name: "Aiden Lim" },
+                  { photo: erfanPhoto, name: "Erfan Nezhad-Ahmadi" },
+                  { photo: ethanPhoto, name: "Ethan Won" },
+                  { photo: vjPhoto, name: "Vijay Vijayaraja" },
+                  { photo: asadPhoto, name: "Asad Farishta" },
+                  { photo: neevPhoto, name: "Neev Prajapati" },
+                  { photo: ahmadPhoto, name: "Ahmad Sultan" },
+                  { photo: timPhoto, name: "Tim Yu" },
+                ].map((member, index) => (
+                  <div
+                    key={index}
+                    className="group flex flex-col items-center flex-shrink-0"
+                  >
+                    <div className="relative w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-[#34D399]/20 shadow-lg transition-all duration-300 group-hover:border-[#34D399]/60 group-hover:scale-105 group-hover:shadow-xl">
+                      <img
+                        src={member.photo}
+                        alt={member.name}
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                      />
+                    </div>
+                    <p className="mt-2 text-xs font-manrope font-semibold text-[#065f46] text-center whitespace-nowrap">
+                      {member.name}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
           {/* Footer */}
           <footer className="relative px-8 md:px-16 py-12 backdrop-blur-xs border-t border-[#34D399]/10 overflow-hidden">
             {/* Background Images */}
